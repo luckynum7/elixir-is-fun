@@ -21,6 +21,10 @@ lint: ## mix credo
 	@echo "⚙ $@"
 	@cd $(SERVER_PATH); mix credo
 
+test: ## mix test
+	@echo "⚙ $@"
+	@cd $(SERVER_PATH); mix test
+
 server: deps ## run Chatty server
 	@echo "⚙ $@"
 	@mix phoenix.server
