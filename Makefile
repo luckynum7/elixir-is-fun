@@ -1,7 +1,9 @@
-.PHONY: all setup server help
+SERVER_PATH := server
+
+.PHONY: all setup deps server help
 .DEFAULT: all
 
-all: setup ## build the project: setup
+all: setup deps ## build the project: setup, deps
 
 setup: ## install dependencies
 	@echo "⚙ $@"
@@ -9,9 +11,17 @@ setup: ## install dependencies
 	# http://www.phoenixframework.org/docs/installation
 	@mix local.hex --force
 	@mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez --force
-	@cd server; mix deps.get
 
-server: ## run Chatty server
+deps: ## mix deps.*
+	@echo "⚙ $@"
+	@cd $(SERVER_PATH); mix deps.get
+	@cd $(SERVER_PATH); mix compile
+
+lint: ## mix credo
+	@echo "⚙ $@"
+	@cd $(SERVER_PATH); mix credo
+
+server: deps ## run Chatty server
 	@echo "⚙ $@"
 	@mix phoenix.server
 
