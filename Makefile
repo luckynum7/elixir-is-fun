@@ -31,7 +31,7 @@ server: deps ## run Chatty server
 
 release: deps ## mix release
 	@echo "⚙ $@"
-	@cd $(SERVER_PATH); mix release
+	@cd $(SERVER_PATH); MIX_ENV=prod mix release --env=prod
 
 clean: ## mix clean
 	@echo "⚙ $@"
