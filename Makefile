@@ -7,8 +7,8 @@ setup: ## install dependencies
 	@echo "⚙ $@"
 	@npm install -s
 	# http://www.phoenixframework.org/docs/installation
-	@mix local.hex
-	@mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+	@mix local.hex --force
+	@mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez --force
 	@cd server; mix deps.get
 
 server: ## run Chatty server
