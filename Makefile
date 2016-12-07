@@ -3,7 +3,7 @@ SERVER_PATH := server
 .PHONY: all setup deps lint test server release clean clean-release clean-all help
 .DEFAULT: all
 
-all: setup ## build the project: setup
+all: setup release ## build the project: setup
 
 setup: ## install dependencies
 	@echo "⚙ $@"
@@ -15,8 +15,7 @@ setup: ## install dependencies
 
 deps: ## mix deps.*
 	@echo "⚙ $@"
-	@cd $(SERVER_PATH); mix deps.get
-	@cd $(SERVER_PATH); mix compile
+	@cd $(SERVER_PATH); mix do deps.get, compile
 
 lint: ## mix credo
 	@echo "⚙ $@"
