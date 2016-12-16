@@ -1,7 +1,9 @@
 SERVER_PATH := server
 
-.PHONY: all setup deps lint test server release clean clean-release clean-all help
-.DEFAULT: all
+.PHONY: all setup deps lint test \
+	server release \
+	clean clean-release clean-node clean-all help
+.DEFAULT: default
 
 all: setup release ## build the project: setup
 
@@ -11,10 +13,12 @@ setup: ## install dependencies
 	@echo "http://www.phoenixframework.org/docs/installation"
 	@mix local.hex --force
 	@mix local.rebar --force
-	@mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez --force
+	@mix archive.install \
+	 https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez \
+	 --force
 	$(MAKE) deps
 
-deps: ## mix deps.*
+deps: ## mix deps.get & compile
 	@echo "⚙ $@"
 	@cd $(SERVER_PATH); mix do deps.get, compile
 
@@ -42,7 +46,11 @@ clean-release: ## mix release.clean
 	@echo "⚙ $@"
 	@cd $(SERVER_PATH); mix release.clean
 
-clean-all: clean-release clean ## clean all
+clean-node: ## remove node files
+	@echo "⚙ $@"
+	@npm run clean-node
+
+clean-all: clean-release clean clean-node ## clean all
 
 help: ## this help
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort
