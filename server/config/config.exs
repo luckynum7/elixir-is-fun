@@ -8,8 +8,8 @@ use Mix.Config
 # Configures the endpoint
 config :chatty, Chatty.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "MVnpbOCffzJ5trBQH8DC9XU+tXhZpc3Vo6+eZSIi/iyul2rPiw35yI+46sm4z4iP",
-  render_errors: [view: Chatty.ErrorView, accepts: ~w(html json)],
+  secret_key_base: "ZBMo34XjXpsxGW3egdAFZod7mPnbCgosaBwD0SEfEK5vjwKtkhH7Zoy/TPO1cloG",
+  render_errors: [view: Chatty.ErrorView, accepts: ~w(json)],
   pubsub: [name: Chatty.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
