@@ -1,6 +1,6 @@
 # elixir is fun
 
 ## TODOs
--[ ] phoenix framework
--[ ] docker
--[ ] redis
+- [ ] phoenix framework
+- [ ] docker
+- [ ] redis
