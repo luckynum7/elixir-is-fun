@@ -8,8 +8,9 @@ all: setup release ## build the project: setup
 setup: ## install dependencies
 	@echo "⚙ $@"
 	@npm install -s
-	# http://www.phoenixframework.org/docs/installation
+	@echo "http://www.phoenixframework.org/docs/installation"
 	@mix local.hex --force
+	@mix local.rebar --force
 	@mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez --force
 	$(MAKE) deps
 
