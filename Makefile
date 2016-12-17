@@ -1,7 +1,7 @@
 ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 SERVER_PATH := $(ROOT_DIR)/server
 
-.PHONY: setup deps \
+.PHONY: setup set-node set-mix deps \
 	lint test server \
 	release server-release \
 	clean clean-node clean-all \
@@ -12,14 +12,23 @@ all: setup release ## build the project: setup
 
 setup: ## install dependencies
 	@echo "⚙ $@"
+	$(MAKE) set-node
+	$(MAKE) set-mix
+	$(MAKE) deps
+
+
+set-node: ## nodejs deps
+	@echo "⚙ $@"
 	@npm install -s
+
+set-mix: ## elixir environment
+	@echo "⚙ $@"
 	@echo "http://www.phoenixframework.org/docs/installation"
 	@mix local.hex --force
 	@mix local.rebar --force
 	@mix archive.install \
 	 https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez \
 	 --force
-	$(MAKE) deps
 
 deps: ## mix deps.get & compile
 	@echo "⚙ $@"
@@ -41,11 +50,11 @@ test: ## mix test
 	@echo "⚙ $@"
 	@cd $(SERVER_PATH); mix test
 
-server: deps ## run Chatty server
+server: ## run Chatty server
 	@echo "⚙ $@"
 	@cd $(SERVER_PATH); mix phoenix.server
 
-release: deps $(SERVER_PATH)/config/prod.secret.exs $(SERVER_PATH)/rel/config.exs ## mix release
+release: $(SERVER_PATH)/config/prod.secret.exs $(SERVER_PATH)/rel/config.exs ## mix release
 	@echo "⚙ $@"
 	@cd $(SERVER_PATH); \
 	 MIX_ENV=prod mix do phoenix.digest, release --env=prod
