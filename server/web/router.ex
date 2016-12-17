@@ -7,5 +7,7 @@ defmodule Chatty.Router do
 
   scope "/api", Chatty do
     pipe_through :api
+
+    get "/greeting", GreetingController, :index
   end
 end
