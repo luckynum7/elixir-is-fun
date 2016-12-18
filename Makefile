@@ -1,5 +1,7 @@
 ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 SERVER_PATH := $(ROOT_DIR)/server
+PROD_SECRET := $(SERVER_PATH)/config/prod.secret.exs
+REL_CONFIG := $(SERVER_PATH)/rel/config.exs
 
 .PHONY: setup set-node set-mix deps \
 	lint test server \
@@ -8,7 +10,7 @@ SERVER_PATH := $(ROOT_DIR)/server
 	all help
 .DEFAULT: default
 
-all: setup release ## build the project: setup
+all: setup release ## build the project: setup, release
 
 setup: ## install dependencies
 	@echo "⚙ $@"
@@ -34,11 +36,11 @@ deps: ## mix deps.get & compile
 	@echo "⚙ $@"
 	@cd $(SERVER_PATH); mix do deps.get, compile
 
-$(SERVER_PATH)/config/prod.secret.exs: ## server/config/prod.secret.exs
+$(PROD_SECRET): ## server/config/prod.secret.exs
 	@echo "⚙ $@"
 	@cd $(SERVER_PATH); $(ROOT_DIR)/commands/make-prod.secret.exs.sh
 
-$(SERVER_PATH)/rel/config.exs: ## distillery config.exs
+$(REL_CONFIG): ## distillery config.exs
 	@echo "⚙ $@"
 	@cd $(SERVER_PATH); mix release.init
 
@@ -54,14 +56,14 @@ server: ## run Chatty server
 	@echo "⚙ $@"
 	@cd $(SERVER_PATH); mix phoenix.server
 
-release: $(SERVER_PATH)/config/prod.secret.exs $(SERVER_PATH)/rel/config.exs ## mix release
+release: $(PROD_SECRET) $(REL_CONFIG) ## mix release
 	@echo "⚙ $@"
 	@cd $(SERVER_PATH); \
 	 MIX_ENV=prod mix do phoenix.digest, release --env=prod
 
-server-release: release ## server release version
+server-release: ## server release version
 	@echo "⚙ $@"
-	@PORT=4000 $(SERVER_PATH)/_build/prod/rel/chatty/bin/chatty foreground
+	@PORT=8080 $(SERVER_PATH)/_build/prod/rel/chatty/bin/chatty foreground
 
 clean: ## mix clean
 	@echo "⚙ $@"
