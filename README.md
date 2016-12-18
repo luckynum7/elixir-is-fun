@@ -19,6 +19,20 @@
 $ make setup
 ```
 
+### How to fix edib build errors
+
+1.https://github.com/edib-tool/docker-elixir-dev
+
+``` bash
+$ docker build -t edib/elixir-phoenix-dev:1.3 .
+```
+
+2.https://github.com/edib-tool/docker-edib-tool
+
+``` bash
+$ docker build -t edib/edib-tool:1.4.0 .
+```
+
 ## How to generate the app
 1.generate the app
 
