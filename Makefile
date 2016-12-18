@@ -2,6 +2,7 @@ ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 SERVER_PATH := $(ROOT_DIR)/server
 PROD_SECRET := $(SERVER_PATH)/config/prod.secret.exs
 REL_CONFIG := $(SERVER_PATH)/rel/config.exs
+APP_PATH := $(SERVER_PATH)/_build/prod/rel/chatty
 
 .PHONY: setup set-node set-mix deps \
 	lint test server \
@@ -63,7 +64,7 @@ release: $(PROD_SECRET) $(REL_CONFIG) ## mix release
 
 server-release: ## server release version
 	@echo "⚙ $@"
-	@PORT=8080 $(SERVER_PATH)/_build/prod/rel/chatty/bin/chatty foreground
+	@PORT=8080 $(APP_PATH)/bin/chatty foreground
 
 clean: ## mix clean
 	@echo "⚙ $@"
