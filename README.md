@@ -1,9 +1,23 @@
 # elixir is fun
 
 ## TODOs
-- [ ] phoenix framework
-- [ ] docker
+- [x] phoenix framework
+- [x] docker
 - [ ] redis
+
+## How to setup
+
+### On the development machine
+1. Erlang
+2. Elixir
+3. Docker
+4. Git
+
+### Setup environment
+
+``` bash
+$ make setup
+```
 
 ## How to generate the app
 1.generate the app

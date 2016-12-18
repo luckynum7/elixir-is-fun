@@ -7,11 +7,12 @@ APP_PATH := $(SERVER_PATH)/_build/prod/rel/chatty
 .PHONY: setup set-node set-mix deps \
 	lint test server \
 	release server-release \
+	image \
 	clean clean-node clean-all \
 	all help
 .DEFAULT: default
 
-all: setup release ## build the project: setup, release
+all: setup image ## build the project: setup, image
 
 setup: ## install dependencies
 	@echo "⚙ $@"
@@ -22,7 +23,7 @@ setup: ## install dependencies
 
 set-node: ## nodejs deps
 	@echo "⚙ $@"
-	@npm install -s
+	@npm install
 
 set-mix: ## elixir environment
 	@echo "⚙ $@"
@@ -32,6 +33,7 @@ set-mix: ## elixir environment
 	@mix archive.install \
 	 https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez \
 	 --force
+	@mix archive.install https://git.io/edib-0.9.0.ez --force
 
 deps: ## mix deps.get & compile
 	@echo "⚙ $@"
@@ -65,6 +67,10 @@ release: $(PROD_SECRET) $(REL_CONFIG) ## mix release
 server-release: ## server release version
 	@echo "⚙ $@"
 	@PORT=8080 $(APP_PATH)/bin/chatty foreground
+
+image: $(PROD_SECRET) $(REL_CONFIG) ## mix edib, build docker image
+	@echo "⚙ $@"
+	@cd $(SERVER_PATH); mix edib
 
 clean: ## mix clean
 	@echo "⚙ $@"
