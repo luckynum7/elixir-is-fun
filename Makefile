@@ -61,7 +61,7 @@ release: $(SERVER_PATH)/config/prod.secret.exs $(SERVER_PATH)/rel/config.exs ## 
 
 server-release: release ## server release version
 	@echo "⚙ $@"
-	@$(SERVER_PATH)/_build/prod/rel/chatty/bin/chatty foreground
+	@PORT=4000 $(SERVER_PATH)/_build/prod/rel/chatty/bin/chatty foreground
 
 clean: ## mix clean
 	@echo "⚙ $@"
