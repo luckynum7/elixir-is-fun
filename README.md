@@ -27,13 +27,29 @@ $ make setup
 $ docker build -t edib/base-erlang:19 .
 ```
 
-1.https://github.com/edib-tool/docker-elixir-dev
+2.https://github.com/edib-tool/docker-elixir-dev
 
 ``` bash
 $ docker build -t edib/elixir-phoenix-dev:1.3 .
 ```
 
-2.https://github.com/edib-tool/docker-edib-tool
+3.https://github.com/edib-tool/docker-edib-tool
+
+```diff
+diff --git a/edib/shared.mk b/edib/shared.mk
+index 1924937..694fd58 100644
+--- a/edib/shared.mk
++++ b/edib/shared.mk
+@@ -10,7 +10,7 @@ APP_VER        = $(shell $(APPINFO_RUNNER) version)
+ 
+ MIX_ENV       ?= prod
+ RELEASE        = releases/$(APP_VER)/$(APP_NAME).tar.gz
+-RELEASE_PATH   = $(APP_DIR)/rel/$(APP_NAME)
++RELEASE_PATH   = $(APP_DIR)/_build/$(MIX_ENV)/rel/$(APP_NAME)
+ RELEASE_FILE   = $(RELEASE_PATH)/$(RELEASE)
+ 
+ STAGE_DIR      = /stage
+```
 
 ``` bash
 $ docker build -t edib/edib-tool:1.4.0 .
