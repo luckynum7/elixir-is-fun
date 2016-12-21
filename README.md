@@ -21,19 +21,13 @@ $ make setup
 
 ### How to fix edib build errors
 
-1.https://github.com/edib-tool/docker-base-erlang
-
-``` bash
-$ docker build -t edib/base-erlang:19 .
-```
-
-2.https://github.com/edib-tool/docker-elixir-dev
+1.https://github.com/edib-tool/docker-elixir-dev
 
 ``` bash
 $ docker build -t edib/elixir-phoenix-dev:1.3 .
 ```
 
-3.https://github.com/edib-tool/docker-edib-tool
+2.https://github.com/edib-tool/docker-edib-tool
 
 ```diff
 diff --git a/edib/shared.mk b/edib/shared.mk
