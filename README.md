@@ -21,6 +21,12 @@ $ make setup
 
 ### How to fix edib build errors
 
+1.https://github.com/edib-tool/docker-base-erlang
+
+``` bash
+$ docker build -t edib/base-erlang:19 .
+```
+
 1.https://github.com/edib-tool/docker-elixir-dev
 
 ``` bash
