@@ -19,7 +19,7 @@
 $ make setup
 ```
 
-### How to fix edib build errors (unsure)
+### How to fix edib build errors
 
 1.https://github.com/edib-tool/docker-elixir-dev
 
@@ -59,6 +59,18 @@ index 1924937..694fd58 100644
  RELEASE_FILE   = $(RELEASE_PATH)/$(RELEASE)
  
  STAGE_DIR      = /stage
+diff --git a/tools/libdeps.exs b/tools/libdeps.exs
+index 2399b70..4b93518 100755
+--- a/tools/libdeps.exs
++++ b/tools/libdeps.exs
+@@ -1,6 +1,6 @@
+ #!/usr/bin/env elixir
+ defmodule Libdeps do
+-  @relpath "app/rel"
++  @relpath "app/_build"
+   @lddpath_regex ~r/\/(lib|usr\/lib)[^ ]+/
+ 
+   def all_files do
 ```
 
 ``` bash
