@@ -19,21 +19,47 @@
 $ make setup
 ```
 
-### How to fix edib build errors
-
-1.https://github.com/edib-tool/docker-base-erlang
-
-``` bash
-$ docker build -t edib/base-erlang:19 .
-```
+### How to fix edib build errors (unsure)
 
 1.https://github.com/edib-tool/docker-elixir-dev
+
+```diff
+diff --git a/Dockerfile b/Dockerfile
+index 15dcbec..2ae8f21 100644
+--- a/Dockerfile
++++ b/Dockerfile
+@@ -3,7 +3,7 @@ MAINTAINER Christoph Grabo <edib@markentier.com>
+ 
+ #RUN apk --update add 'elixir<1.4.0' && rm -rf /var/cache/apk/*
+ 
+-ENV ELIXIR_VERSION 1.3.3
++ENV ELIXIR_VERSION 1.3.4
+ 
+ RUN curl -sSL https://github.com/elixir-lang/elixir/releases/download/v${ELIXIR_VERSION}/Precompiled.zip \
+     -o Precompiled.zip && \
+```
 
 ``` bash
 $ docker build -t edib/elixir-phoenix-dev:1.3 .
 ```
 
 2.https://github.com/edib-tool/docker-edib-tool
+
+```diff
+diff --git a/edib/shared.mk b/edib/shared.mk
+index 1924937..694fd58 100644
+--- a/edib/shared.mk
++++ b/edib/shared.mk
+@@ -10,7 +10,7 @@ APP_VER        = $(shell $(APPINFO_RUNNER) version)
+ 
+ MIX_ENV       ?= prod
+ RELEASE        = releases/$(APP_VER)/$(APP_NAME).tar.gz
+-RELEASE_PATH   = $(APP_DIR)/rel/$(APP_NAME)
++RELEASE_PATH   = $(APP_DIR)/_build/$(MIX_ENV)/rel/$(APP_NAME)
+ RELEASE_FILE   = $(RELEASE_PATH)/$(RELEASE)
+ 
+ STAGE_DIR      = /stage
+```
 
 ``` bash
 $ docker build -t edib/edib-tool:1.4.0 .
