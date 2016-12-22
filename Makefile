@@ -70,7 +70,8 @@ server-release: ## server release version
 
 image: $(PROD_SECRET) $(REL_CONFIG) ## mix edib, build docker image
 	@echo "⚙ $@"
-	@cd $(SERVER_PATH); mix edib
+	@cd $(SERVER_PATH); \
+	 MIX_ENV=prod mix edib
 
 clean: ## mix clean
 	@echo "⚙ $@"
