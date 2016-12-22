@@ -19,7 +19,7 @@
 $ make setup
 ```
 
-### How to fix edib build errors
+### How to fix edib build errors (unsure)
 
 1.https://github.com/edib-tool/docker-elixir-dev
 
