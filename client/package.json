@@ -8,7 +8,5 @@
     "keywords": [],
     "author": "Mark Huo <huomian@outlook.com>",
     "license": "ISC",
-    "devDependencies": {
-        "webpack": "^2.2.0-rc.2"
-    }
+    "devDependencies": {}
 }
