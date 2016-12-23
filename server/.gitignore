@@ -1,6 +1,5 @@
-# edib
-/tarballs
 
+### Phoenix
 # App artifacts
 /_build
 /db
@@ -17,3 +16,26 @@ erl_crash.dump
 # secrets file as long as you replace its contents by environment
 # variables.
 /config/prod.secret.exs
+
+# edib
+/tarballs
+
+### Erlang
+.eunit
+deps
+*.o
+*.beam
+*.plt
+erl_crash.dump
+ebin/*.beam
+rel/example_project
+.concrete/DEV_MODE
+.rebar
+
+### Elixir
+/_build
+/cover
+/deps
+erl_crash.dump
+*.ez
+*.beam
