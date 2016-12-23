@@ -4,7 +4,7 @@ PROD_SECRET := $(SERVER_PATH)/config/prod.secret.exs
 REL_CONFIG := $(SERVER_PATH)/rel/config.exs
 APP_PATH := $(SERVER_PATH)/_build/prod/rel/chatty
 
-.PHONY: setup set-node set-mix deps \
+.PHONY: setup set-mix deps \
 	lint test server \
 	release server-release \
 	image \
@@ -16,14 +16,8 @@ all: setup image ## build the project: setup, image
 
 setup: ## install dependencies
 	@echo "⚙ $@"
-	$(MAKE) set-node
 	$(MAKE) set-mix
 	$(MAKE) deps
-
-
-set-node: ## nodejs deps
-	@echo "⚙ $@"
-	@npm install
 
 set-mix: ## elixir environment
 	@echo "⚙ $@"
@@ -77,11 +71,7 @@ clean: ## mix clean
 	@echo "⚙ $@"
 	@cd $(SERVER_PATH); mix clean
 
-clean-node: ## remove node files
-	@echo "⚙ $@"
-	@npm run clean-node
-
-clean-all: clean clean-node ## clean all
+clean-all: clean ## clean all
 
 help: ## this help
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort
