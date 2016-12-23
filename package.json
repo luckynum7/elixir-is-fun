@@ -1,9 +1,19 @@
 {
-  "scripts": {
-    "clean-node": "rimraf node_modules"
-  },
-  "devDependencies": {
-    "rimraf": "^2.5.4"
-  },
-  "version": "0.0.1"
+    "name": "elixir-is-fun",
+    "version": "0.0.1",
+    "devDependencies": {
+        "rimraf": "^2.5.4"
+    },
+    "scripts": {
+        "clean-node": "rimraf node_modules"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/luckynum7/elixir-is-fun.git"
+    },
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/luckynum7/elixir-is-fun/issues"
+    },
+    "homepage": "https://github.com/luckynum7/elixir-is-fun#readme"
 }

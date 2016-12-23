@@ -1,0 +1,14 @@
+{
+    "name": "chatty-client",
+    "version": "0.0.1",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Mark Huo <huomian@outlook.com>",
+    "license": "ISC",
+    "devDependencies": {
+        "webpack": "^2.2.0-rc.2"
+    }
+}
