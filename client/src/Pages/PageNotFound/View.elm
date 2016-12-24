@@ -1,4 +1,4 @@
-module Pages.Welcome.View exposing (view)
+module Pages.PageNotFound.View exposing (view)
 
 import Html exposing (div, text, Html)
 
@@ -9,4 +9,4 @@ import Html exposing (div, text, Html)
 view : Html a
 view =
     div []
-        [ text "Welcome TEA!" ]
+        [ text "404" ]
