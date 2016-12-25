@@ -4,23 +4,23 @@
 
 *** Server							     :SERVER:
 
-**** WAITING learn phoenix framework
-**** DONE make a docker image
+**** WAITING [#C] learn phoenix framework
+**** DONE [#B] make a docker image
      CLOSED: [2016-12-25 Sun 16:15]
-**** TODO learn docker-compose
-**** TODO connect to redis
-**** TODO create phoenix channel
-**** TODO learn elixir [[https://github.com/elixir-lang/gen_stage][GenStage]]
+**** TODO [#B] learn docker-compose
+**** TODO [#A] connect to redis
+**** TODO [#B] create phoenix channel
+**** TODO [#B] learn elixir [[https://github.com/elixir-lang/gen_stage][GenStage]]
 
 *** Client							     :CLIENT:
 
-**** STARTED learn elm
-**** STARTED build router with elm-route-url
-**** TODO make ui, e.g. elm-mdl
-**** TODO connect to server
-**** TODO connect to phoenix channel
-**** TODO make a docker image?
-**** TODO connect to server docker
+**** STARTED [#B] learn elm
+**** STARTED [#A] build router with elm-route-url
+**** TODO [#A] make ui, e.g. elm-mdl
+**** TODO [#A] connect to server
+**** TODO [#B] connect to phoenix channel
+**** TODO [#C] make a docker image?
+**** TODO [#C] connect to server docker
 
 ** How to setup environment
 
