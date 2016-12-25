@@ -1,53 +1,53 @@
-* elixir is fun
+#+TITLE:Elixir is fun
 
-** TODOs
+* TODOs
 
-*** Server							     :SERVER:
+** Server							     :SERVER:
 
-**** WAITING [#C] learn phoenix framework
-**** DONE [#B] make a docker image
-     CLOSED: [2016-12-25 Sun 16:15]
-**** TODO [#B] learn docker-compose
-**** TODO [#A] connect to redis
-**** TODO [#B] create phoenix channel
-**** TODO [#B] learn elixir [[https://github.com/elixir-lang/gen_stage][GenStage]]
+*** WAITING [#C] learn phoenix framework
+*** DONE [#B] make a docker image
+    CLOSED: [2016-12-25 Sun 16:15]
+*** TODO [#B] learn docker-compose
+*** TODO [#A] connect to redis
+*** TODO [#B] create phoenix channel
+*** TODO [#B] learn elixir GenStage
 
-*** Client							     :CLIENT:
+** Client							     :CLIENT:
 
-**** STARTED [#B] learn elm
-**** STARTED [#A] build router with elm-route-url
-**** TODO [#A] make ui, e.g. elm-mdl
-**** TODO [#A] connect to server
-**** TODO [#B] connect to phoenix channel
-**** TODO [#C] make a docker image?
-**** TODO [#C] connect to server docker
+*** STARTED [#B] learn elm
+*** STARTED [#A] build router with elm-route-url
+*** TODO [#A] make ui, e.g. elm-mdl
+*** TODO [#A] connect to server
+*** TODO [#B] connect to phoenix channel
+*** TODO [#C] make a docker image?
+*** TODO [#C] connect to server docker
 
-** How to setup environment
+* How to setup environment
 
-*** On the development machine
+** On the development machine
 
 1. Erlang
 2. Elixir
 3. Docker
 4. Git
 
-*** Setup environment
+** Setup environment
 
 #+BEGIN_SRC bash
 $ make setup
 #+END_SRC
 
-** How to make docker image
+* How to make docker image
 
-*** Make docker image
+** Make docker image
 
 #+BEGIN_SRC bash
 $ make image
 #+END_SRC
 
-*** How to fix edib build errors				     :SERVER:
+** How to fix edib build errors					     :SERVER:
 
-**** [[https://github.com/edib-tool/docker-elixir-dev]]
+*** [[https://github.com/edib-tool/docker-elixir-dev]]
 
 #+BEGIN_SRC diff
 diff --git a/Dockerfile b/Dockerfile
@@ -69,7 +69,7 @@ index 15dcbec..2ae8f21 100644
 $ docker build -t edib/elixir-phoenix-dev:1.3 .
 #+END_SRC
 
-**** [[https://github.com/edib-tool/docker-edib-tool]]
+*** [[https://github.com/edib-tool/docker-edib-tool]]
 
 #+BEGIN_SRC diff
 diff --git a/edib/shared.mk b/edib/shared.mk
@@ -103,18 +103,18 @@ index 2399b70..4b93518 100755
 $ docker build -t edib/edib-tool:1.4.0 .
 #+END_SRC
 
-** /How to create the server/
-*** Create the server						     :SERVER:
+* /How to create the server/
+** Create the server						     :SERVER:
 
 #+BEGIN_SRC bash
 $ mix phoenix.new --no-brunch --no-ecto --no-html server --app chatty
 #+END_SRC
 
-*** Adding prod.secret.exs.example to a git Repository		     :SERVER:
+** Adding prod.secret.exs.example to a git Repository		     :SERVER:
 
 [[http://sgeos.github.io/phoenix/elixir/git/2016/07/18/phoenix-adding-prod-secret-exs-example-to-git-repository.html]]
 
-**** Add the =config/prod.secret.exs.example=
+*** Add the =config/prod.secret.exs.example=
 
 #+BEGIN_SRC bash
 $ cp server/config/prod.secret.exs server/config/prod.secret.exs.example
@@ -128,7 +128,7 @@ config :memo_api, MemoApi.Endpoint,
   secret_key_base: "SECRET+KEY+BASE"
 #+END_SRC
 
-**** Regenerate =config/prod.secret.exs=
+*** Regenerate =config/prod.secret.exs=
 
 #+BEGIN_SRC shell
 SECRET_KEY_BASE=$(elixir -e ":crypto.strong_rand_bytes(48) |> Base.encode64 |> IO.puts")
