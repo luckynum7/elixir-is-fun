@@ -1,13 +1,26 @@
+#+STARTUP: content
+
 * elixir is fun
 
-** [2/3] TODOs
-- [X] phoenix framework
-- [X] docker
-- [ ] redis
+** TODOs
+
+*** Server							     :SERVER:
+
+**** IN-PROGRESS phoenix framework
+**** IN-PROGRESS docker
+**** TODO redis
+
+*** Client							     :CLIENT:
+
+**** IN-PROGRESS elm
+**** IN-PROGRESS elm-route-url
+**** TODO elm-mdl
+**** TODO connect to server
 
 ** How to setup environment
 
 *** On the development machine
+
 1. Erlang
 2. Elixir
 3. Docker
@@ -19,41 +32,17 @@
 $ make setup
 #+END_SRC
 
-** How to create the app
-*** create the app
-
-#+BEGIN_SRC bash
-$ mix phoenix.new --no-brunch --no-ecto --no-html server --app chatty
-#+END_SRC
-
-*** add the `config/prod.secret.exs.example`
-
-[Phoenix/Elixir, Adding prod.secret.exs.example to a git Repository][http://sgeos.github.io/phoenix/elixir/git/2016/07/18/phoenix-adding-prod-secret-exs-example-to-git-repository.html]
-
-#+BEGIN_SRC bash
-$ cp server/config/prod.secret.exs server/config/prod.secret.exs.example
-#+END_SRC
-
-#+BEGIN_SRC elixir
-# Regenerate config/prod.secret.exs with the following commands
-#   $ SECRET_KEY_BASE=$(elixir -e ":crypto.strong_rand_bytes(48) |> Base.encode64 |> IO.puts")
-#   $ sed "s|SECRET+KEY+BASE|$SECRET_KEY_BASE|" config/prod.secret.exs.example >config/prod.secret.exs
-config :memo_api, MemoApi.Endpoint,
-  secret_key_base: "SECRET+KEY+BASE"
-#+END_SRC
-
-*** Regenerate `config/prod.secret.exs`
-
-#+BEGIN_SRC shell
-SECRET_KEY_BASE=$(elixir -e ":crypto.strong_rand_bytes(48) |> Base.encode64 |> IO.puts")
-sed "s|SECRET+KEY+BASE|$SECRET_KEY_BASE|" config/prod.secret.exs.example >config/prod.secret.exs
-#+END_SRC
-
 ** How to make docker image
 
-*** How to fix edib build errors
+*** Make docker image
 
-**** https://github.com/edib-tool/docker-elixir-dev
+#+BEGIN_SRC bash
+$ make image
+#+END_SRC
+
+*** How to fix edib build errors				     :SERVER:
+
+**** [[https://github.com/edib-tool/docker-elixir-dev]]
 
 #+BEGIN_SRC diff
 diff --git a/Dockerfile b/Dockerfile
@@ -75,7 +64,7 @@ index 15dcbec..2ae8f21 100644
 $ docker build -t edib/elixir-phoenix-dev:1.3 .
 #+END_SRC
 
-**** https://github.com/edib-tool/docker-edib-tool
+**** [[https://github.com/edib-tool/docker-edib-tool]]
 
 #+BEGIN_SRC diff
 diff --git a/edib/shared.mk b/edib/shared.mk
@@ -107,4 +96,37 @@ index 2399b70..4b93518 100755
 
 #+BEGIN_SRC bash
 $ docker build -t edib/edib-tool:1.4.0 .
+#+END_SRC
+
+** /How to create the server/				     :SERVER:
+
+*** Create the server
+
+#+BEGIN_SRC bash
+$ mix phoenix.new --no-brunch --no-ecto --no-html server --app chatty
+#+END_SRC
+
+*** Adding prod.secret.exs.example to a git Repository
+
+[[http://sgeos.github.io/phoenix/elixir/git/2016/07/18/phoenix-adding-prod-secret-exs-example-to-git-repository.html]]
+
+**** Add the =config/prod.secret.exs.example=
+
+#+BEGIN_SRC bash
+$ cp server/config/prod.secret.exs server/config/prod.secret.exs.example
+#+END_SRC
+
+#+BEGIN_SRC elixir
+# Regenerate config/prod.secret.exs with the following commands
+#   $ SECRET_KEY_BASE=$(elixir -e ":crypto.strong_rand_bytes(48) |> Base.encode64 |> IO.puts")
+#   $ sed "s|SECRET+KEY+BASE|$SECRET_KEY_BASE|" config/prod.secret.exs.example >config/prod.secret.exs
+config :memo_api, MemoApi.Endpoint,
+  secret_key_base: "SECRET+KEY+BASE"
+#+END_SRC
+
+**** Regenerate =config/prod.secret.exs=
+
+#+BEGIN_SRC shell
+SECRET_KEY_BASE=$(elixir -e ":crypto.strong_rand_bytes(48) |> Base.encode64 |> IO.puts")
+sed "s|SECRET+KEY+BASE|$SECRET_KEY_BASE|" config/prod.secret.exs.example >config/prod.secret.exs
 #+END_SRC
