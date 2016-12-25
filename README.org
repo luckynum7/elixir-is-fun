@@ -6,14 +6,14 @@
 
 *** Server							     :SERVER:
 
-**** IN-PROGRESS phoenix framework
-**** IN-PROGRESS docker
+**** STARTED phoenix framework
+**** STARTED docker
 **** TODO redis
 
 *** Client							     :CLIENT:
 
-**** IN-PROGRESS elm
-**** IN-PROGRESS elm-route-url
+**** STARTED elm
+**** STARTED elm-route-url
 **** TODO elm-mdl
 **** TODO connect to server
 
