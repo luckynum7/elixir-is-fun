@@ -98,15 +98,14 @@ index 2399b70..4b93518 100755
 $ docker build -t edib/edib-tool:1.4.0 .
 #+END_SRC
 
-** /How to create the server/				     :SERVER:
-
-*** Create the server
+** /How to create the server/
+*** Create the server						     :SERVER:
 
 #+BEGIN_SRC bash
 $ mix phoenix.new --no-brunch --no-ecto --no-html server --app chatty
 #+END_SRC
 
-*** Adding prod.secret.exs.example to a git Repository
+*** Adding prod.secret.exs.example to a git Repository		     :SERVER:
 
 [[http://sgeos.github.io/phoenix/elixir/git/2016/07/18/phoenix-adding-prod-secret-exs-example-to-git-repository.html]]
 
