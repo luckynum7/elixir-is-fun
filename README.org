@@ -1,8 +1,8 @@
 #+TITLE:Elixir is fun
 
-* TODOs
+* TODOs                                                           :prototype:
 
-** Server							     :SERVER:
+** Server
 
 *** WAITING [#C] learn phoenix framework
 *** DONE [#B] make a docker image
@@ -12,7 +12,7 @@
 *** TODO [#B] create phoenix channel
 *** TODO [#B] learn elixir GenStage
 
-** Client							     :CLIENT:
+** Client
 
 *** WAITING [#B] learn elm
 *** STARTED [#A] connect to server
@@ -56,7 +56,7 @@ $ make setup
 $ make image
 #+END_SRC
 
-** How to fix edib build errors                                      :CLIENT:
+** How to fix edib build errors
 
 *** [[https://github.com/edib-tool/docker-elixir-dev]]
 
@@ -115,13 +115,13 @@ $ docker build -t edib/edib-tool:1.4.0 .
 #+END_SRC
 
 * /How to create the server/
-** Create the server                                                 :CLIENT:
+** Create the server
 
 #+BEGIN_SRC bash
 $ mix phoenix.new --no-brunch --no-ecto --no-html server --app chatty
 #+END_SRC
 
-** Adding prod.secret.exs.example to a git Repository                :CLIENT:
+** Adding prod.secret.exs.example to a git Repository
 
 [[http://sgeos.github.io/phoenix/elixir/git/2016/07/18/phoenix-adding-prod-secret-exs-example-to-git-repository.html]]
 
