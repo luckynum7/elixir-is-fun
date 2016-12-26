@@ -14,8 +14,9 @@
 
 ** Client							     :CLIENT:
 
-*** STARTED [#B] learn elm
-*** STARTED [#A] build router with elm-route-url
+*** WAITING [#B] learn elm
+*** WAITING [#A] build router with elm-route-url
+*** STARTED [#A] how to server elm
 *** TODO [#A] make ui, e.g. elm-mdl
 *** TODO [#A] connect to server
 *** TODO [#B] connect to phoenix channel

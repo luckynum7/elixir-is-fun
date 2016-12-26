@@ -4,11 +4,11 @@ PROD_SECRET := $(SERVER_PATH)/config/prod.secret.exs
 REL_CONFIG := $(SERVER_PATH)/rel/config.exs
 APP_PATH := $(SERVER_PATH)/_build/prod/rel/chatty
 
-.PHONY: setup set-mix deps \
+.PHONY: setup setup-mix deps \
 	lint test server \
 	release server-release \
 	image \
-	clean clean-node clean-all \
+	clean clean-all \
 	all help
 .DEFAULT: default
 
@@ -19,7 +19,7 @@ setup: ## install dependencies
 	$(MAKE) set-mix
 	$(MAKE) deps
 
-set-mix: ## elixir environment
+setup-mix: ## elixir environment
 	@echo "⚙ $@"
 	@echo "http://www.phoenixframework.org/docs/installation"
 	@mix local.hex --force
