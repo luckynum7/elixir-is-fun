@@ -5,6 +5,7 @@ import App.Update exposing (Msg(..))
 import Html exposing (Html, div, a, text)
 import Html.Events exposing (onClick)
 import Pages.PageNotFound.View
+import Pages.Profile.View
 import Pages.Welcome.View
 
 
@@ -22,6 +23,8 @@ viewHeader model =
     div []
         [ a [ onClick <| SetActivePage Welcome ] [ text "welcome" ]
         , text "|"
+        , a [ onClick <| SetActivePage Profile ] [ text "profile" ]
+        , text "|"
         , a [ onClick <| SetActivePage PageNotFound ] [ text "404" ]
         ]
 
@@ -32,10 +35,13 @@ viewMainContent model =
         Welcome ->
             Pages.Welcome.View.view
 
+        Profile ->
+            Html.map PageProfile (Pages.Profile.View.view model.pageProfile)
+
         PageNotFound ->
             Pages.PageNotFound.View.view
 
 
 viewFooterContent : Model -> Html Msg
 viewFooterContent model =
-    div [] []
+    div [] [ text "Chatty" ]

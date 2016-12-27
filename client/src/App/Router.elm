@@ -12,6 +12,9 @@ delta2url previous current =
         Welcome ->
             Just <| UrlChange NewEntry "/#welcome"
 
+        Profile ->
+            Just <| UrlChange NewEntry "/#profile"
+
         PageNotFound ->
             Just <| UrlChange NewEntry "/#404"
 
@@ -24,6 +27,9 @@ hash2messages location =
 
         "#welcome" ->
             [ SetActivePage Welcome ]
+
+        "#profile" ->
+            [ SetActivePage Profile ]
 
         "#404" ->
             [ SetActivePage PageNotFound ]
