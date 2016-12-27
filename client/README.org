@@ -1,0 +1,8 @@
+#+TITLE:Chatty client w/ Elm
+
+* Syntax
+** Elm Cheat Sheet: [[https://github.com/izdi/elm-cheat-sheet]]
+** Elm Syntax: [[http://elm-lang.org/docs/syntax]]
+** Useful syntax:
+   - ~model ! []~ means ~(mode, Cmd.none)~
+   - ~(=>) = (,)~ define a function ~(,) 1 2 == (1,2)~
