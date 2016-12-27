@@ -14,7 +14,7 @@
 
 ** Client
 
-*** WAITING [#B] learn elm
+*** WAITING [#C] learn elm
 *** STARTED [#A] connect to server
 *** WAITING [#A] build router with elm-route-url
 *** WAITING [#A] how to deploy elm?
