@@ -13,6 +13,7 @@ view model =
     div []
         [ viewHeader model
         , viewMainContent model
+        , viewFooterContent model
         ]
 
 
@@ -33,3 +34,8 @@ viewMainContent model =
 
         PageNotFound ->
             Pages.PageNotFound.View.view
+
+
+viewFooterContent : Model -> Html Msg
+viewFooterContent model =
+    div [] []
