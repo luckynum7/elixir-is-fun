@@ -1,8 +1,16 @@
 module Main exposing (..)
 
-import Html exposing (Html, text)
+import RouteUrl exposing (RouteUrlProgram)
+import Viewer exposing (Model, Msg)
 
 
-main : Html a
+main : RouteUrlProgram Never Model Msg
 main =
-    text "Hello!"
+    RouteUrl.program
+        { delta2url = Viewer.delta2url
+        , location2messages = Viewer.url2messages
+        , init = Viewer.init
+        , update = Viewer.update
+        , view = Viewer.view
+        , subscriptions = Viewer.subscriptions
+        }
