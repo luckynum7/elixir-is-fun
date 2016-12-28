@@ -1,4 +1,4 @@
-module Greeting.Greetings exposing (..)
+module Greeting.Greetings exposing (Model, emptyModel, init, Msg(..), update, view, title, delta2builder, builder2messages)
 
 import Html exposing (Html, div, text)
 import Http
@@ -33,7 +33,9 @@ emptyModel =
 
 init : ( Model, Cmd Msg )
 init =
-    emptyModel ! []
+    ( emptyModel
+    , getGreetings emptyModel.name
+    )
 
 
 type Msg
