@@ -1,6 +1,7 @@
 module Greeting.Greetings exposing (Model, emptyModel, init, Msg(..), update, view, title, delta2builder, builder2messages)
 
-import Html exposing (Html, div, text)
+import Html exposing (Html, div, a, text)
+import Html.Events exposing (onClick)
 import Http
 import Json.Decode as Json
 import RouteUrl.Builder exposing (Builder, builder, path, replacePath)
@@ -48,7 +49,7 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         Aloha ->
-            ( { model | requestStatus = Use }, getGreetings model.name )
+            ( { model | requestStatus = Use }, getGreetings "Hoffmann" )
 
         Greetings (Ok uname) ->
             case model.requestStatus of
@@ -59,7 +60,7 @@ update msg model =
                     model ! []
 
         Greetings (Err _) ->
-            model ! []
+            { model | name = "<Error>" } ! []
 
         NameFromLocation url ->
             { model | name = url, requestStatus = Ignore } ! []
@@ -71,7 +72,13 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div [] [ text <| "Hello " ++ model.name ]
+    div []
+        [ div []
+            [ text <| "Hello " ++ model.name ]
+        , div
+            []
+            [ a [ onClick Aloha ] [ text "Aloha!" ] ]
+        ]
 
 
 
@@ -82,7 +89,7 @@ getGreetings : String -> Cmd Msg
 getGreetings name =
     Http.send Greetings <|
         Http.get
-            ("http://localhost:4000/api/greeting?name=" ++ name)
+            ("http://127.0.0.1:4000/api/greeting?name=" ++ name)
         <|
             decodeName
 
