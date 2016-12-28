@@ -3,8 +3,9 @@ SERVER_PATH := $(ROOT_DIR)/server
 PROD_SECRET := $(SERVER_PATH)/config/prod.secret.exs
 REL_CONFIG := $(SERVER_PATH)/rel/config.exs
 APP_PATH := $(SERVER_PATH)/_build/prod/rel/chatty
+CLIENT_PATH := $(ROOT_DIR)/client
 
-.PHONY: setup setup-mix deps \
+.PHONY: setup setup-mix deps setup-elm \
 	lint test server \
 	release server-release \
 	image \
@@ -16,8 +17,9 @@ all: setup image ## build the project: setup, image
 
 setup: ## install dependencies
 	@echo "⚙ $@"
-	$(MAKE) set-mix
-	$(MAKE) deps
+	@$(MAKE) setup-mix
+	@$(MAKE) deps
+	@$(MAKE) setup-elm
 
 setup-mix: ## elixir environment
 	@echo "⚙ $@"
@@ -32,6 +34,10 @@ setup-mix: ## elixir environment
 deps: ## mix deps.get & compile
 	@echo "⚙ $@"
 	@cd $(SERVER_PATH); mix do deps.get, compile
+
+setup-elm: ## elm environment
+	@echo "⚙ $@"
+	@cd $(CLIENT_PATH); elm make
 
 $(PROD_SECRET): ## server/config/prod.secret.exs
 	@echo "⚙ $@"
