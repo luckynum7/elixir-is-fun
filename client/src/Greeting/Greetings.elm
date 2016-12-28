@@ -71,7 +71,7 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div [] [ text <| "Hello" ++ model.name ]
+    div [] [ text <| "Hello " ++ model.name ]
 
 
 
