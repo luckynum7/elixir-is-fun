@@ -163,6 +163,8 @@ sed "s|SECRET+KEY+BASE|$SECRET_KEY_BASE|" config/prod.secret.exs.example >config
 **** [[https://github.com/rrrene/credo][credo]] - A static code analysis tool with a focus on code consistency and teaching Elixir.
 *** Documentation
 **** [[https://github.com/elixir-lang/ex_doc][ex_doc]] - ExDoc is a tool to generate documentation for your Elixir projects.
+*** Framework Components
+**** [[https://github.com/whatyouhide/corsica][corsica]] - Elixir library for dealing with CORS requests.
 *** ORM and Datamapping
 **** [[https://github.com/ephe-meral/ex_sider][ex_sider]] - Elixir Map/List/Set interfaces for Redis data structures (uses Redix, but that is configurable).
 **** [[https://github.com/whatyouhide/redix][redix]] - Superfast, pipelined, resilient Redis driver for Elixir.

@@ -36,5 +36,8 @@ defmodule Chatty.Endpoint do
     key: "_chatty_key",
     signing_salt: "e0i3QDLX"
 
+  # CORS control
+  plug Chatty.CORS
+
   plug Chatty.Router
 end

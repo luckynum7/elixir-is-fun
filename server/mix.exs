@@ -17,7 +17,7 @@ defmodule Chatty.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Chatty, []},
-     applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext]]
+     applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext, :corsica]]
   end
 
   # Specifies which paths to compile per environment.
@@ -32,6 +32,8 @@ defmodule Chatty.Mixfile do
      {:phoenix_pubsub, "~> 1.0"},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
+     {:plug, "~> 1.0"},
+     {:corsica, "~> 0.5"}, # CORS
      {:credo, "~> 0.5", only: [:dev, :test]}, # lint
      {:distillery, "~> 1.0"} # release
     ]
