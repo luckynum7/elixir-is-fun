@@ -27,7 +27,7 @@ setup-mix: ## elixir environment
 	@mix local.hex --force
 	@mix local.rebar --force
 	@mix archive.install \
-	 https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez \
+	 https://github.com/phoenixframework/archives/raw/master/phoenix_new-1.2.1.ez \
 	 --force
 	@mix archive.install https://git.io/edib-0.9.0.ez --force
 
