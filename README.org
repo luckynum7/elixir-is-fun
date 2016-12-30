@@ -15,14 +15,17 @@
 ** Client
 
 *** WAITING [#C] learn elm
-*** STARTED [#A] connect to server
-**** STARTED CORS, server and client
+*** DONE [#A] connect to server
+    CLOSED: [2016-12-30 Fri 09:06]
+**** DONE CORS, server and client
+     CLOSED: [2016-12-30 Fri 09:05]
 *** WAITING [#A] build router with elm-route-url
-*** WAITING [#A] how to deploy elm?
+*** STARTED [#A] how to deploy elm?
 **** TODO elm-make --output index.html
 **** TODO elm-make --output index.js, w/ static files
 **** TODO webpack 2
 **** TODO nginx w/ static files
+**** TODO elixir umbrella?
 **** CANCELED elm-reactor
      CLOSED: [2016-12-26 Mon 11:22] elm-reactor run in debug mode
 **** CANCELED node http-server
