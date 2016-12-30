@@ -7,13 +7,13 @@ CLIENT_PATH := $(ROOT_DIR)/client
 
 .PHONY: setup setup-mix deps setup-elm \
 	lint test server \
-	release server-release \
-	image \
+	release serve-release \
+	image serve-image\
 	clean clean-all \
 	all help
 .DEFAULT: default
 
-all: setup image ## build the project: setup, image
+all: setup image serve-image ## build the project: setup, image, serve-image
 
 setup: ## install dependencies
 	@echo "⚙ $@"
@@ -64,14 +64,18 @@ release: $(PROD_SECRET) $(REL_CONFIG) ## mix release
 	@cd $(SERVER_PATH); \
 	 MIX_ENV=prod mix do phoenix.digest, release --env=prod
 
-server-release: ## server release version
+serve-release: ## server release version
 	@echo "⚙ $@"
-	@PORT=8080 $(APP_PATH)/bin/chatty foreground
+	@PORT=4000 $(APP_PATH)/bin/chatty foreground
 
 image: $(PROD_SECRET) $(REL_CONFIG) ## mix edib, build docker image
 	@echo "⚙ $@"
 	@cd $(SERVER_PATH); \
 	 MIX_ENV=prod mix edib
+
+serve-image: ## serve docker image
+	@echo "⚙ $@"
+	@docker run --rm -e "PORT=4000" -p 4000:4000 local/chatty:latest
 
 clean: ## mix clean
 	@echo "⚙ $@"
