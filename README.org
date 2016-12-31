@@ -25,7 +25,7 @@
 **** TODO elm-make --output index.js, w/ static files
 **** TODO webpack 2
 **** TODO nginx w/ static files
-**** TODO elixir umbrella?
+**** STARTED elixir umbrella?
 **** CANCELED elm-reactor
      CLOSED: [2016-12-26 Mon 11:22] elm-reactor run in debug mode
 **** CANCELED node http-server
@@ -34,6 +34,7 @@
      CLOSED: [2016-12-26 Mon 11:27] learning curve
 *** TODO [#A] make ui, e.g. elm-mdl
 *** TODO [#B] connect to phoenix channel
+*** TODO [#B] connect w/ WebRTC (better)
 *** TODO [#C] make a docker image*
 *** TODO [#C] connect to server docker
 
