@@ -1,49 +1,5 @@
 #+TITLE:Elixir is fun
 
-* TODOs                                                           :prototype:
-
-** Server
-
-*** TODO [#C] learn phoenix framework
-*** DONE [#B] make a docker image
-    CLOSED: [2016-12-25 Sun 16:15]
-*** TODO [#B] learn docker-compose
-*** TODO [#A] connect to redis
-*** TODO [#B] create phoenix channel
-*** TODO [#B] learn elixir GenStage
-*** TODO [#C] elixir umbrella
-
-** Client
-
-*** TODO [#C] learn elm
-*** DONE [#A] connect to server
-    CLOSED: [2016-12-30 Fri 09:06]
-**** DONE CORS, server and client
-     CLOSED: [2016-12-30 Fri 09:05]
-*** WAITING [#A] build router with elm-route-url
-*** TODO [#B] how to deploy elm?
-**** TODO elm-make --output index.html
-**** TODO elm-make --output index.js, w/ static files
-**** TODO webpack 2
-**** TODO nginx w/ static files
-**** CANCELED elm-reactor
-     CLOSED: [2016-12-26 Mon 11:22] elm-reactor run in debug mode
-**** CANCELED node http-server
-     CLOSED: [2016-12-26 Mon 11:25] memory leak, random crash, etc
-**** CANCELED haskell w/ elm, maybe Snap framework
-     CLOSED: [2016-12-26 Mon 11:27] learning curve
-*** STARTED [#A] make ui, e.g. elm-mdl
-**** TODO elm-mdl: [[https://github.com/debois/elm-mdl]]
-**** CANCELED elm-native-ui
-**** TODO elm-ui: [[https://github.com/gdotdesign/elm-ui]]
-     CLOSED: [2016-12-31 Sat]
-**** TODO elm-css: [[https://github.com/rtfeldman/elm-css]]
-*** TODO [#B] connect w/ WebRTC (better)
-*** TODO [#B] connect to phoenix channel
-*** TODO [#C] make a docker image*
-*** TODO [#C] connect to server docker
-*** TODO [#C] Web Workers
-*** TODO [#C] Service Workers
 * How to setup environment
 
 ** On the development machine
@@ -69,7 +25,7 @@ $ make image
 
 ** How to fix edib build errors
 
-*** [[https://github.com/edib-tool/docker-elixir-dev]]
+*** [[https://github.com/edib-tool/docker-elixir-dev][docker-elixir-dev]]
 
 #+BEGIN_SRC diff
 diff --git a/Dockerfile b/Dockerfile
@@ -91,7 +47,7 @@ index 15dcbec..2ae8f21 100644
 $ docker build -t edib/elixir-phoenix-dev:1.3 .
 #+END_SRC
 
-*** [[https://github.com/edib-tool/docker-edib-tool]]
+*** [[https://github.com/edib-tool/docker-edib-tool][docker-edib-tool]]
 
 #+BEGIN_SRC diff
 diff --git a/edib/shared.mk b/edib/shared.mk
@@ -161,23 +117,23 @@ sed "s|SECRET+KEY+BASE|$SECRET_KEY_BASE|" config/prod.secret.exs.example >config
 ** Guides
 *** Elxir: [[http://elixir-lang.org/getting-started/introduction.html]]
 *** Mix, OTP, ExUnit: [[http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html]]
-**** [[http://elixir-lang.org/getting-started/mix-otp/dependencies-and-umbrella-apps.html#umbrella-projects][Umbrella projects]]
-**** [[http://elixir-lang.org/getting-started/mix-otp/docs-tests-and-with.html][Docs, tests and with]]
+    - [ ] [[http://elixir-lang.org/getting-started/mix-otp/dependencies-and-umbrella-apps.html#umbrella-projects][Umbrella projects]]
+    - [ ] [[http://elixir-lang.org/getting-started/mix-otp/docs-tests-and-with.html][Docs, tests and with]]
 *** GenStage
-**** [[http://elixir-lang.org/blog/2016/07/14/announcing-genstage/][Announcing GenStage]]
-     GenStage is a new Elixir behaviour for exchanging events with back-pressure between Elixir processes.
+    - [ ] [[http://elixir-lang.org/blog/2016/07/14/announcing-genstage/][Announcing GenStage]]
+    GenStage is a new Elixir behaviour for exchanging events with back-pressure between Elixir processes.
 ** Awesome Elixir: [[https://github.com/h4cc/awesome-elixir]]
 *** Authentication
-**** [[https://github.com/ueberauth/guardian][guardian]] - An authentication framework for use with Elixir applications.
+    - [ ] [[https://github.com/ueberauth/guardian][guardian]] - An authentication framework for use with Elixir applications.
 *** Code Analysis
-**** [[https://github.com/rrrene/credo][credo]] - A static code analysis tool with a focus on code consistency and teaching Elixir.
+    - [ ] [[https://github.com/rrrene/credo][credo]] - A static code analysis tool with a focus on code consistency and teaching Elixir.
 *** Documentation
-**** [[https://github.com/elixir-lang/ex_doc][ex_doc]] - ExDoc is a tool to generate documentation for your Elixir projects.
+    - [ ] [[https://github.com/elixir-lang/ex_doc][ex_doc]] - ExDoc is a tool to generate documentation for your Elixir projects.
 *** Framework Components
-**** [[https://github.com/whatyouhide/corsica][corsica]] - Elixir library for dealing with CORS requests.
+    - [ ] [[https://github.com/whatyouhide/corsica][corsica]] - Elixir library for dealing with CORS requests.
 *** ORM and Datamapping
-**** [[https://github.com/ephe-meral/ex_sider][ex_sider]] - Elixir Map/List/Set interfaces for Redis data structures (uses Redix, but that is configurable).
-**** [[https://github.com/whatyouhide/redix][redix]] - Superfast, pipelined, resilient Redis driver for Elixir.
+    - [ ] [[https://github.com/ephe-meral/ex_sider][ex_sider]] - Elixir Map/List/Set interfaces for Redis data structures (uses Redix, but that is configurable).
+    - [ ] [[https://github.com/whatyouhide/redix][redix]] - Superfast, pipelined, resilient Redis driver for Elixir.
 *** Testing
-**** [[https://hexdocs.pm/ex_unit/ExUnit.html][ExUnit]] - Unit testing framework for Elixir.
-**** [[https://github.com/jjh42/mock][mock]] - Mocking library for the Elixir language.
+    - [ ] [[https://hexdocs.pm/ex_unit/ExUnit.html][ExUnit]] - Unit testing framework for Elixir.
+    - [ ] [[https://github.com/jjh42/mock][mock]] - Mocking library for the Elixir language.
