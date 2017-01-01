@@ -1,3 +1,5 @@
+#+TITLE: Elixir is fun - TODO
+
 * TODOs                                                           :prototype:
 ** Server
 *** TODO [#C] learn phoenix framework
