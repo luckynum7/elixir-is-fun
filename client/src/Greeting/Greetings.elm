@@ -1,9 +1,14 @@
-module Greeting.Greetings exposing (Model, emptyModel, init, Msg(..), update, view, title, delta2builder, builder2messages)
+module Greeting.Greetings exposing (Model, model, init, Msg(..), update, view, title, delta2builder, builder2messages)
 
-import Html exposing (Html, div, a, text)
+import Html exposing (Html, div, text)
+import Html.Attributes exposing (style)
 import Html.Events exposing (onClick)
 import Http
 import Json.Decode as Json
+import Material
+import Material.Button as Button
+import Material.Options as Options
+import Material.Scheme
 import RouteUrl.Builder exposing (Builder, builder, path, replacePath)
 
 
@@ -13,6 +18,7 @@ import RouteUrl.Builder exposing (Builder, builder, path, replacePath)
 type alias Model =
     { name : String
     , requestStatus : RequestStatus
+    , mdl : Material.Model
     }
 
 
@@ -21,10 +27,11 @@ type RequestStatus
     | Ignore
 
 
-emptyModel : Model
-emptyModel =
+model : Model
+model =
     { name = ""
     , requestStatus = Use
+    , mdl = Material.model
     }
 
 
@@ -34,8 +41,8 @@ emptyModel =
 
 init : ( Model, Cmd Msg )
 init =
-    ( emptyModel
-    , getGreetings emptyModel.name
+    ( model
+    , getGreetings model.name
     )
 
 
@@ -43,6 +50,7 @@ type Msg
     = Aloha
     | Greetings (Result Http.Error String)
     | NameFromLocation String
+    | Mdl (Material.Msg Msg)
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -65,20 +73,34 @@ update msg model =
         NameFromLocation url ->
             { model | name = url, requestStatus = Ignore } ! []
 
+        Mdl msg_ ->
+            Material.update Mdl msg_ model
+
 
 
 -- VIEW
 
 
+type alias Mdl =
+    Material.Model
+
+
 view : Model -> Html Msg
 view model =
-    div []
+    div [ style [ ( "padding", "2rem" ) ] ]
         [ div []
             [ text <| "Hello " ++ model.name ]
         , div
             []
-            [ a [ onClick Aloha ] [ text "Aloha!" ] ]
+            -- [ a [ onClick Aloha ] [ text "Aloha!" ] ]
+            [ Button.render Mdl
+                [ 0 ]
+                model.mdl
+                [ Options.onClick Aloha ]
+                [ text "Aloha!" ]
+            ]
         ]
+        |> Material.Scheme.top
 
 
 
