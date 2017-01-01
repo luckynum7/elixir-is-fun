@@ -31,7 +31,7 @@
 *** STARTED [#A] make ui, e.g. elm-mdl
 **** TODO elm-mdl: [[https://github.com/debois/elm-mdl]]
 **** CANCELED elm-native-ui
-**** TODO elm-ui: [[https://github.com/gdotdesign/elm-ui]]
+**** CANCELED elm-ui: [[https://github.com/gdotdesign/elm-ui]]
      CLOSED: [2016-12-31 Sat]
 **** TODO elm-css: [[https://github.com/rtfeldman/elm-css]]
 *** TODO [#B] connect w/ WebRTC (better)
