@@ -1,0 +1,40 @@
+* TODOs                                                           :prototype:
+** Server
+*** TODO [#C] learn phoenix framework
+*** DONE [#B] make a docker image
+    CLOSED: [2016-12-25 Sun 16:15]
+*** TODO [#B] learn docker-compose
+*** TODO [#A] connect to redis
+*** TODO [#B] create phoenix channel
+*** TODO [#B] learn elixir GenStage
+*** TODO [#C] elixir umbrella
+** Client
+*** TODO [#C] learn elm
+*** DONE [#A] connect to server
+    CLOSED: [2016-12-30 Fri 09:06]
+**** DONE CORS, server and client
+     CLOSED: [2016-12-30 Fri 09:05]
+*** WAITING [#A] build router with elm-route-url
+*** TODO [#B] how to deploy elm?
+**** TODO elm-make --output index.html
+**** TODO elm-make --output index.js, w/ static files
+**** TODO webpack 2
+**** TODO nginx w/ static files
+**** CANCELED elm-reactor
+     CLOSED: [2016-12-26 Mon 11:22] elm-reactor run in debug mode
+**** CANCELED node http-server
+     CLOSED: [2016-12-26 Mon 11:25] memory leak, random crash, etc
+**** CANCELED haskell w/ elm, maybe Snap framework
+     CLOSED: [2016-12-26 Mon 11:27] learning curve
+*** STARTED [#A] make ui, e.g. elm-mdl
+**** TODO elm-mdl: [[https://github.com/debois/elm-mdl]]
+**** CANCELED elm-native-ui
+**** TODO elm-ui: [[https://github.com/gdotdesign/elm-ui]]
+     CLOSED: [2016-12-31 Sat]
+**** TODO elm-css: [[https://github.com/rtfeldman/elm-css]]
+*** TODO [#B] connect w/ WebRTC (better)
+*** TODO [#B] connect to phoenix channel
+*** TODO [#C] make a docker image*
+*** TODO [#C] connect to server docker
+*** TODO [#C] Web Workers
+*** TODO [#C] Service Workers
