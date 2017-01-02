@@ -29,7 +29,7 @@
 **** CANCELED haskell w/ elm, maybe Snap framework
      CLOSED: [2016-12-26 Mon 11:27] learning curve
 *** STARTED [#A] make ui, e.g. elm-mdl
-**** TODO elm-mdl: [[https://github.com/debois/elm-mdl]]
+**** STARTED elm-mdl: [[https://github.com/debois/elm-mdl]]
 **** CANCELED elm-native-ui
 **** CANCELED elm-ui: [[https://github.com/gdotdesign/elm-ui]]
      CLOSED: [2016-12-31 Sat]
