@@ -16,7 +16,8 @@
     CLOSED: [2016-12-30 Fri 09:06]
 **** DONE CORS, server and client
      CLOSED: [2016-12-30 Fri 09:05]
-*** WAITING [#A] build router with elm-route-url
+*** DONE [#A] build router with elm-route-url
+    CLOSED: [2017-01-03 Tue 09:58]
 *** TODO [#B] how to deploy elm?
 **** TODO elm-make --output index.html
 **** TODO elm-make --output index.js, w/ static files
@@ -28,12 +29,14 @@
      CLOSED: [2016-12-26 Mon 11:25] memory leak, random crash, etc
 **** CANCELED haskell w/ elm, maybe Snap framework
      CLOSED: [2016-12-26 Mon 11:27] learning curve
-*** STARTED [#A] make ui, e.g. elm-mdl
-**** STARTED elm-mdl: [[https://github.com/debois/elm-mdl]]
+*** DONE [#A] make ui, e.g. elm-mdl
+    CLOSED: [2017-01-03 Tue 09:58]
+**** DONE elm-mdl: [[https://github.com/debois/elm-mdl]]
+     CLOSED: [2017-01-03 Tue 09:57]
 **** CANCELED elm-native-ui
 **** CANCELED elm-ui: [[https://github.com/gdotdesign/elm-ui]]
      CLOSED: [2016-12-31 Sat]
-**** TODO elm-css: [[https://github.com/rtfeldman/elm-css]]
+*** TODO [#C] elm-css: [[https://github.com/rtfeldman/elm-css]]
 *** TODO [#B] connect w/ WebRTC (better)
 *** TODO [#B] connect to phoenix channel
 *** TODO [#C] make a docker image*
