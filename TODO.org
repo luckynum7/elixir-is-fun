@@ -5,10 +5,11 @@
 *** DONE [#B] make a docker image
     CLOSED: [2016-12-25 Sun 16:15]
 *** TODO [#B] learn docker-compose
-*** TODO [#A] connect to redis
-*** TODO [#B] create phoenix channel
-*** TODO [#B] learn elixir GenStage
-*** TODO [#C] elixir umbrella
+*** TODO [#A] connect to Redis
+*** TODO [#B] create Phoenix Channel
+*** TODO [#B] learn Elixir GenStage
+*** TODO [#C] learn Elixir Umbrella
+*** TODO [#C] learn Phoenix Presence
 ** Client
 *** DONE [#A] connect to server
     CLOSED: [2016-12-30 Fri 09:06]
@@ -35,9 +36,26 @@
 **** CANCELED elm-ui: [[https://github.com/gdotdesign/elm-ui]]
      CLOSED: [2016-12-31 Sat]
 *** TODO [#C] elm-css: [[https://github.com/rtfeldman/elm-css]]
-*** STARTED [#B] connect w/ WebRTC (better)
-*** TODO [#B] connect to phoenix channel
+*** TODO [#B] connect to Phoenix Channel
 *** TODO [#C] make a docker image*
 *** TODO [#C] connect to server docker
 *** TODO [#C] Web Workers
 *** TODO [#C] Service Workers
+** STARTED [#B] Connect w/ WebRTC (better)
+   - [[https://youtu.be/yI5J2P9kcBQ?list=PLE7tQUdRKcyYoiEKWny0Jj72iu564bVFD][ElixirConf 2016 - WebRTC and Phoenix, when μ Seconds aren't Fast Enough by Jason Stiebs]]
+   - [[https://hpbn.co/]]
+   - [[https://hpbn.co/webrtc/]]
+   - [[https://webrtc.org/]]
+   - [[https://webrtchacks.com/]]
+*** Elixir
+    - [[https://teamch.at/]]
+    - [[https://hexdocs.pm/phoenix/Phoenix.Presence.html][Phoenix.Presence]]
+    - [[https://github.com/jeregrine/phoenix_webrtc][jeregrine/phoenix_webrtc]]
+    - [[https://github.com/smpallen99/webrtc_example][smpallen99/webrtc_example]]
+**** STUN & TURN: [[https://github.com/processone/stun][processone/stun]]
+*** Elm
+*** Node.js
+    - [[https://github.com/feross/simple-peer][feross/simple-peer]]
+*** PureScript
+    - [[https://github.com/puffnfresh/purescript-webrtc][puffnfresh/purescript-webrtc]]
+
