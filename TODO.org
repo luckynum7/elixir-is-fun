@@ -41,3 +41,6 @@
 *** TODO [#C] connect to server docker
 *** TODO [#C] Web Workers
 *** TODO [#C] Service Workers
+** WebRTC
+*** STARTED [#A] elm w/ webrtc
+*** TODO [#B] elixir w/ webrtc
