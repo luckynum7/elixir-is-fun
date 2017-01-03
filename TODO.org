@@ -41,21 +41,3 @@
 *** TODO [#C] connect to server docker
 *** TODO [#C] Web Workers
 *** TODO [#C] Service Workers
-** STARTED [#B] Connect w/ WebRTC (better)
-   - [[https://youtu.be/yI5J2P9kcBQ?list=PLE7tQUdRKcyYoiEKWny0Jj72iu564bVFD][ElixirConf 2016 - WebRTC and Phoenix, when μ Seconds aren't Fast Enough by Jason Stiebs]]
-   - [[https://hpbn.co/]]
-   - [[https://hpbn.co/webrtc/]]
-   - [[https://webrtc.org/]]
-   - [[https://webrtchacks.com/]]
-*** Elixir
-    - [[https://teamch.at/]]
-    - [[https://hexdocs.pm/phoenix/Phoenix.Presence.html][Phoenix.Presence]]
-    - [[https://github.com/jeregrine/phoenix_webrtc][jeregrine/phoenix_webrtc]]
-    - [[https://github.com/smpallen99/webrtc_example][smpallen99/webrtc_example]]
-**** STUN & TURN: [[https://github.com/processone/stun][processone/stun]]
-*** Elm
-*** Node.js
-    - [[https://github.com/feross/simple-peer][feross/simple-peer]]
-*** PureScript
-    - [[https://github.com/puffnfresh/purescript-webrtc][puffnfresh/purescript-webrtc]]
-
