@@ -1,4 +1,5 @@
-#+TITLE: Elixir is fun - TODO
+#+TITLE: Elixir is fun
+#+OPTIONS: ^:{}
 
 * TODOs                                                           :prototype:
 ** Server
