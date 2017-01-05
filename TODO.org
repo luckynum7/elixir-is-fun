@@ -43,5 +43,5 @@
 *** TODO [#C] Web Workers
 *** TODO [#C] Service Workers
 ** WebRTC
-*** STARTED [#A] elm w/ webrtc
+*** TODO [#A] elm w/ webrtc
 *** TODO [#B] elixir w/ webrtc

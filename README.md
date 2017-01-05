@@ -1,42 +1,37 @@
-- [How to setup environment](#org590e797)
-  - [On the development machine](#org7ecf7e2)
-  - [Setup environment](#orgca875ec)
-- [How to make docker image](#orgc23a732)
-  - [Make docker image](#orgc19d3b9)
-  - [How to fix edib build errors](#org2dd4b66)
-    - [[docker-elixir-dev](https://github.com/edib-tool/docker-elixir-dev)](#org4591a77)
-    - [[docker-edib-tool](https://github.com/edib-tool/docker-edib-tool)](#org59ff7cf)
-- [*How to create the server*](#orgaef2536)
-  - [Create the server](#org84ec148)
-  - [Adding prod.secret.exs.example to a git Repository](#org27cbb9a)
-    - [Add the `config/prod.secret.exs.example`](#org96e9ef3)
-    - [Regenerate `config/prod.secret.exs`](#org31fda95)
-- [Reference](#org1e3364c)
-  - [Guides](#org5500929)
-    - [Elxir: <http://elixir-lang.org/getting-started/introduction.html>](#org63c1265)
-    - [Mix, OTP, ExUnit: <http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html>](#orge38d8ef)
-    - [GenStage](#orgf29bf2c)
-  - [Awesome Elixir: <https://github.com/h4cc/awesome-elixir>](#org0276d1e)
-    - [Authentication](#org7d608e5)
-    - [Code Analysis](#orgfdb0978)
-    - [Documentation](#org96c22e0)
-    - [Framework Components](#org71f6046)
-    - [ORM and Datamapping](#orgca5bd55)
-    - [Testing](#orgf1400ff)
-  - [Connect w/ WebRTC (better)](#org3242348)
-    - [Elixir](#org41cf709)
-    - [Elm](#org19aa296)
-    - [Node.js](#orgc4ed306)
-    - [PureScript](#orgd60b468)
+- [How to setup environment](#org557a66d)
+  - [On the development machine](#orgec62106)
+  - [Setup environment](#org1cfa4cb)
+- [How to make docker image](#org2b87820)
+  - [Make docker image](#org2a64cbc)
+  - [How to fix edib build errors](#orgfec6561)
+    - [[docker-elixir-dev](https://github.com/edib-tool/docker-elixir-dev)](#orge3b7291)
+    - [[docker-edib-tool](https://github.com/edib-tool/docker-edib-tool)](#org5f84f92)
+- [*How to create the server*](#org0eeb870)
+  - [Create the server](#orge0be22a)
+  - [Adding prod.secret.exs.example to a git Repository](#orgaf49729)
+    - [Add the `config/prod.secret.exs.example`](#org8a552dc)
+    - [Regenerate `config/prod.secret.exs`](#orgc442473)
+- [Reference](#org11b5933)
+  - [Guides](#org41031cf)
+    - [Elxir: <http://elixir-lang.org/getting-started/introduction.html>](#org175d044)
+    - [Mix, OTP, ExUnit: <http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html>](#orge5bceb5)
+    - [GenStage](#org3e92fd0)
+  - [Awesome Elixir: <https://github.com/h4cc/awesome-elixir>](#org91462dd)
+    - [Authentication](#org016a50a)
+    - [Code Analysis](#orgc336d44)
+    - [Documentation](#org37a2cc1)
+    - [Framework Components](#org18237ec)
+    - [ORM and Datamapping](#orgbd52e19)
+    - [Testing](#org7f858fe)
 
 
 
-<a id="org590e797"></a>
+<a id="org557a66d"></a>
 
 # How to setup environment
 
 
-<a id="org7ecf7e2"></a>
+<a id="orgec62106"></a>
 
 ## On the development machine
 
@@ -46,7 +41,7 @@
 4.  Git
 
 
-<a id="orgca875ec"></a>
+<a id="org1cfa4cb"></a>
 
 ## Setup environment
 
@@ -55,12 +50,12 @@ $ make setup
 ```
 
 
-<a id="orgc23a732"></a>
+<a id="org2b87820"></a>
 
 # How to make docker image
 
 
-<a id="orgc19d3b9"></a>
+<a id="org2a64cbc"></a>
 
 ## Make docker image
 
@@ -69,12 +64,12 @@ $ make image
 ```
 
 
-<a id="org2dd4b66"></a>
+<a id="orgfec6561"></a>
 
 ## How to fix edib build errors
 
 
-<a id="org4591a77"></a>
+<a id="orge3b7291"></a>
 
 ### [docker-elixir-dev](https://github.com/edib-tool/docker-elixir-dev)
 
@@ -99,7 +94,7 @@ $ docker build -t edib/elixir-phoenix-dev:1.3 .
 ```
 
 
-<a id="org59ff7cf"></a>
+<a id="org5f84f92"></a>
 
 ### [docker-edib-tool](https://github.com/edib-tool/docker-edib-tool)
 
@@ -136,12 +131,12 @@ $ docker build -t edib/edib-tool:1.4.0 .
 ```
 
 
-<a id="orgaef2536"></a>
+<a id="org0eeb870"></a>
 
 # *How to create the server*
 
 
-<a id="org84ec148"></a>
+<a id="orge0be22a"></a>
 
 ## Create the server
 
@@ -150,14 +145,14 @@ $ mix phoenix.new --no-brunch --no-ecto --no-html server --app chatty
 ```
 
 
-<a id="org27cbb9a"></a>
+<a id="orgaf49729"></a>
 
 ## Adding prod.secret.exs.example to a git Repository
 
 <http://sgeos.github.io/phoenix/elixir/git/2016/07/18/phoenix-adding-prod-secret-exs-example-to-git-repository.html>
 
 
-<a id="org96e9ef3"></a>
+<a id="org8a552dc"></a>
 
 ### Add the `config/prod.secret.exs.example`
 
@@ -174,7 +169,7 @@ config :memo_api, MemoApi.Endpoint,
 ```
 
 
-<a id="org31fda95"></a>
+<a id="orgc442473"></a>
 
 ### Regenerate `config/prod.secret.exs`
 
@@ -184,22 +179,22 @@ sed "s|SECRET+KEY+BASE|$SECRET_KEY_BASE|" config/prod.secret.exs.example >config
 ```
 
 
-<a id="org1e3364c"></a>
+<a id="org11b5933"></a>
 
 # Reference
 
 
-<a id="org5500929"></a>
+<a id="org41031cf"></a>
 
 ## Guides
 
 
-<a id="org63c1265"></a>
+<a id="org175d044"></a>
 
 ### Elxir: <http://elixir-lang.org/getting-started/introduction.html>
 
 
-<a id="orge38d8ef"></a>
+<a id="orge5bceb5"></a>
 
 ### Mix, OTP, ExUnit: <http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html>
 
@@ -207,7 +202,7 @@ sed "s|SECRET+KEY+BASE|$SECRET_KEY_BASE|" config/prod.secret.exs.example >config
 -   [ ] [Docs, tests and with](http://elixir-lang.org/getting-started/mix-otp/docs-tests-and-with.html)
 
 
-<a id="orgf29bf2c"></a>
+<a id="org3e92fd0"></a>
 
 ### GenStage
 
@@ -216,40 +211,40 @@ sed "s|SECRET+KEY+BASE|$SECRET_KEY_BASE|" config/prod.secret.exs.example >config
 GenStage is a new Elixir behaviour for exchanging events with back-pressure between Elixir processes.
 
 
-<a id="org0276d1e"></a>
+<a id="org91462dd"></a>
 
 ## Awesome Elixir: <https://github.com/h4cc/awesome-elixir>
 
 
-<a id="org7d608e5"></a>
+<a id="org016a50a"></a>
 
 ### Authentication
 
 -   [ ] [guardian](https://github.com/ueberauth/guardian) - An authentication framework for use with Elixir applications.
 
 
-<a id="orgfdb0978"></a>
+<a id="orgc336d44"></a>
 
 ### Code Analysis
 
 -   [ ] [credo](https://github.com/rrrene/credo) - A static code analysis tool with a focus on code consistency and teaching Elixir.
 
 
-<a id="org96c22e0"></a>
+<a id="org37a2cc1"></a>
 
 ### Documentation
 
 -   [ ] [ex\_doc](https://github.com/elixir-lang/ex_doc) - ExDoc is a tool to generate documentation for your Elixir projects.
 
 
-<a id="org71f6046"></a>
+<a id="org18237ec"></a>
 
 ### Framework Components
 
 -   [ ] [corsica](https://github.com/whatyouhide/corsica) - Elixir library for dealing with CORS requests.
 
 
-<a id="orgca5bd55"></a>
+<a id="orgbd52e19"></a>
 
 ### ORM and Datamapping
 
@@ -257,51 +252,9 @@ GenStage is a new Elixir behaviour for exchanging events with back-pressure betw
 -   [ ] [redix](https://github.com/whatyouhide/redix) - Superfast, pipelined, resilient Redis driver for Elixir.
 
 
-<a id="orgf1400ff"></a>
+<a id="org7f858fe"></a>
 
 ### Testing
 
 -   [ ] [ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html) - Unit testing framework for Elixir.
 -   [ ] [mock](https://github.com/jjh42/mock) - Mocking library for the Elixir language.
-
-
-<a id="org3242348"></a>
-
-## Connect w/ WebRTC (better)
-
--   [ElixirConf 2016 - WebRTC and Phoenix, when μ Seconds aren't Fast Enough by Jason Stiebs](https://youtu.be/yI5J2P9kcBQ?list=PLE7tQUdRKcyYoiEKWny0Jj72iu564bVFD)
--   <https://hpbn.co/>
--   <https://hpbn.co/webrtc/>
--   <https://webrtc.org/>
--   <https://webrtchacks.com/>
-
-
-<a id="org41cf709"></a>
-
-### Elixir
-
--   <https://teamch.at/>
--   [Phoenix.Presence](https://hexdocs.pm/phoenix/Phoenix.Presence.html)
--   [jeregrine/phoenix\_webrtc](https://github.com/jeregrine/phoenix_webrtc)
--   [smpallen99/webrtc\_example](https://github.com/smpallen99/webrtc_example)
-
-1.  STUN & TURN: [processone/stun](https://github.com/processone/stun)
-
-
-<a id="org19aa296"></a>
-
-### Elm
-
-
-<a id="orgc4ed306"></a>
-
-### Node.js
-
--   [feross/simple-peer](https://github.com/feross/simple-peer)
-
-
-<a id="orgd60b468"></a>
-
-### PureScript
-
--   [puffnfresh/purescript-webrtc](https://github.com/puffnfresh/purescript-webrtc)
