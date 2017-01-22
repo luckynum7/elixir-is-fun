@@ -19,7 +19,7 @@ setup: ## install dependencies
 	@echo "⚙ $@"
 	@$(MAKE) setup-mix
 	@$(MAKE) deps
-	@$(MAKE) setup-elm
+	# @$(MAKE) setup-elm
 
 setup-mix: ## elixir environment
 	@echo "⚙ $@"
