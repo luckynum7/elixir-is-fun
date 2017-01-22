@@ -29,7 +29,7 @@ setup-mix: ## elixir environment
 	@mix archive.install \
 	 https://github.com/phoenixframework/archives/raw/master/phoenix_new-1.2.1.ez \
 	 --force
-	@mix archive.install https://git.io/edib-0.9.0.ez --force
+	@mix archive.install https://git.io/edib-0.10.0.ez --force
 
 deps: ## mix deps.get & compile
 	@echo "⚙ $@"
