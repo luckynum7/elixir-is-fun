@@ -1,6 +1,75 @@
 #+TITLE:Elixir is fun
 #+OPTIONS: ^:{}
 
+* Reference
+
+** Guides
+
+*** Elxir: [[http://elixir-lang.org/getting-started/introduction.html]]
+
+*** Mix, OTP, ExUnit: [[http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html]]
+    - [ ] [[http://elixir-lang.org/getting-started/mix-otp/dependencies-and-umbrella-apps.html#umbrella-projects][Umbrella projects]]
+    - [ ] [[http://elixir-lang.org/getting-started/mix-otp/docs-tests-and-with.html][Docs, tests and with]]
+
+*** GenStage
+    - [ ] [[http://elixir-lang.org/blog/2016/07/14/announcing-genstage/][Announcing GenStage]]
+    GenStage is a new Elixir behaviour for exchanging events with back-pressure between Elixir processes.
+
+** Awesome Elixir: [[https://github.com/h4cc/awesome-elixir]]
+
+*** Authentication
+    - [ ] [[https://github.com/ueberauth/guardian][guardian]] - An authentication framework for use with Elixir applications.
+
+*** Code Analysis
+    - [ ] [[https://github.com/rrrene/credo][credo]] - A static code analysis tool with a focus on code consistency and teaching Elixir.
+
+*** Documentation
+    - [ ] [[https://github.com/elixir-lang/ex_doc][ex_doc]] - ExDoc is a tool to generate documentation for your Elixir projects.
+
+*** Framework Components
+    - [ ] [[https://github.com/whatyouhide/corsica][corsica]] - Elixir library for dealing with CORS requests.
+
+*** ORM and Datamapping
+    - [ ] [[https://github.com/ephe-meral/ex_sider][ex_sider]] - Elixir Map/List/Set interfaces for Redis data structures (uses Redix, but that is configurable).
+    - [ ] [[https://github.com/whatyouhide/redix][redix]] - Superfast, pipelined, resilient Redis driver for Elixir.
+
+*** Testing
+    - [ ] [[https://hexdocs.pm/ex_unit/ExUnit.html][ExUnit]] - Unit testing framework for Elixir.
+    - [ ] [[https://github.com/jjh42/mock][mock]] - Mocking library for the Elixir language.
+
+* /How to create the server/
+
+** Create the server
+
+#+BEGIN_SRC bash
+$ mix phoenix.new --no-brunch --no-ecto --no-html server --app chatty
+#+END_SRC
+
+** Adding prod.secret.exs.example to a git Repository
+
+[[http://sgeos.github.io/phoenix/elixir/git/2016/07/18/phoenix-adding-prod-secret-exs-example-to-git-repository.html]]
+
+*** Add the ~config/prod.secret.exs.example~
+
+#+BEGIN_SRC bash
+$ cp server/config/prod.secret.exs server/config/prod.secret.exs.example
+#+END_SRC
+
+#+BEGIN_SRC elixir
+# Regenerate config/prod.secret.exs with the following commands
+#   $ SECRET_KEY_BASE=$(elixir -e ":crypto.strong_rand_bytes(48) |> Base.encode64 |> IO.puts")
+#   $ sed "s|SECRET+KEY+BASE|$SECRET_KEY_BASE|" config/prod.secret.exs.example >config/prod.secret.exs
+config :memo_api, MemoApi.Endpoint,
+  secret_key_base: "SECRET+KEY+BASE"
+#+END_SRC
+
+*** Regenerate ~config/prod.secret.exs~
+
+#+BEGIN_SRC shell
+SECRET_KEY_BASE=$(elixir -e ":crypto.strong_rand_bytes(48) |> Base.encode64 |> IO.puts")
+sed "s|SECRET+KEY+BASE|$SECRET_KEY_BASE|" config/prod.secret.exs.example >config/prod.secret.exs
+#+END_SRC
+
 * How to setup environment
 
 ** On the development machine
@@ -81,60 +150,3 @@ $ make image
 # #+BEGIN_SRC bash
 # $ docker build -t edib/edib-tool:1.4.0 .
 # #+END_SRC
-
-* /How to create the server/
-** Create the server
-
-#+BEGIN_SRC bash
-$ mix phoenix.new --no-brunch --no-ecto --no-html server --app chatty
-#+END_SRC
-
-** Adding prod.secret.exs.example to a git Repository
-
-[[http://sgeos.github.io/phoenix/elixir/git/2016/07/18/phoenix-adding-prod-secret-exs-example-to-git-repository.html]]
-
-*** Add the ~config/prod.secret.exs.example~
-
-#+BEGIN_SRC bash
-$ cp server/config/prod.secret.exs server/config/prod.secret.exs.example
-#+END_SRC
-
-#+BEGIN_SRC elixir
-# Regenerate config/prod.secret.exs with the following commands
-#   $ SECRET_KEY_BASE=$(elixir -e ":crypto.strong_rand_bytes(48) |> Base.encode64 |> IO.puts")
-#   $ sed "s|SECRET+KEY+BASE|$SECRET_KEY_BASE|" config/prod.secret.exs.example >config/prod.secret.exs
-config :memo_api, MemoApi.Endpoint,
-  secret_key_base: "SECRET+KEY+BASE"
-#+END_SRC
-
-*** Regenerate ~config/prod.secret.exs~
-
-#+BEGIN_SRC shell
-SECRET_KEY_BASE=$(elixir -e ":crypto.strong_rand_bytes(48) |> Base.encode64 |> IO.puts")
-sed "s|SECRET+KEY+BASE|$SECRET_KEY_BASE|" config/prod.secret.exs.example >config/prod.secret.exs
-#+END_SRC
-
-* Reference
-** Guides
-*** Elxir: [[http://elixir-lang.org/getting-started/introduction.html]]
-*** Mix, OTP, ExUnit: [[http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html]]
-    - [ ] [[http://elixir-lang.org/getting-started/mix-otp/dependencies-and-umbrella-apps.html#umbrella-projects][Umbrella projects]]
-    - [ ] [[http://elixir-lang.org/getting-started/mix-otp/docs-tests-and-with.html][Docs, tests and with]]
-*** GenStage
-    - [ ] [[http://elixir-lang.org/blog/2016/07/14/announcing-genstage/][Announcing GenStage]]
-    GenStage is a new Elixir behaviour for exchanging events with back-pressure between Elixir processes.
-** Awesome Elixir: [[https://github.com/h4cc/awesome-elixir]]
-*** Authentication
-    - [ ] [[https://github.com/ueberauth/guardian][guardian]] - An authentication framework for use with Elixir applications.
-*** Code Analysis
-    - [ ] [[https://github.com/rrrene/credo][credo]] - A static code analysis tool with a focus on code consistency and teaching Elixir.
-*** Documentation
-    - [ ] [[https://github.com/elixir-lang/ex_doc][ex_doc]] - ExDoc is a tool to generate documentation for your Elixir projects.
-*** Framework Components
-    - [ ] [[https://github.com/whatyouhide/corsica][corsica]] - Elixir library for dealing with CORS requests.
-*** ORM and Datamapping
-    - [ ] [[https://github.com/ephe-meral/ex_sider][ex_sider]] - Elixir Map/List/Set interfaces for Redis data structures (uses Redix, but that is configurable).
-    - [ ] [[https://github.com/whatyouhide/redix][redix]] - Superfast, pipelined, resilient Redis driver for Elixir.
-*** Testing
-    - [ ] [[https://hexdocs.pm/ex_unit/ExUnit.html][ExUnit]] - Unit testing framework for Elixir.
-    - [ ] [[https://github.com/jjh42/mock][mock]] - Mocking library for the Elixir language.
